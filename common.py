@@ -14,7 +14,7 @@ class Model:
     advanced: str = "gpt-4o-2024-05-13"
 
 model = Model();    
-client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'), timeout=30, max_retries=1)
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), timeout=30, max_retries=1)
         
 def makeup_response(message, finish_reason="ERROR"):
     return {

@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import tiktoken
 
 
-api_key = "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"
+# api_key = "sk-proj-mV..."
 
 @dataclass(frozen=True)
 class Model: 
@@ -14,7 +14,7 @@ class Model:
     advanced: str = "gpt-4o-2024-05-13"
 
 model = Model();    
-client = OpenAI(api_key=api_key, timeout=30, max_retries=1)
+client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'), timeout=30, max_retries=1)
         
 def makeup_response(message, finish_reason="ERROR"):
     return {

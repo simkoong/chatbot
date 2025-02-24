@@ -19,7 +19,7 @@ jjinchin = Chatbot(
 application = Flask(__name__)
 
 
-@application.route("/")
+@application.route("/hello")
 def hello():
     return "Hello goorm!"
 
@@ -29,7 +29,8 @@ def welcome():  # 함수명은 꼭 welcome일 필요는 없습니다.
     return "Hello goorm!"
 
 
-@application.route("/chat-app")
+# @application.route("/chat-app")
+@application.route("/")
 def chat_app():
     return render_template("chat.html")
 
